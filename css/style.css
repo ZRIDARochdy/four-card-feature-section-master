@@ -1,3 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+/* -------------------------------------------------------------------------- */
+/*                               Variables Style                              */
+/* -------------------------------------------------------------------------- */
+
+:root {
+	/*** Primary Color ***/
+	--Red: hsl(0, 78%, 62%);
+	--Cyan: hsl(180, 62%, 55%);
+	--Orange: hsl(34, 97%, 64%);
+	--Blue: hsl(212, 86%, 64%);
+
+	/*** Neutral Color ***/
+	--veryDarkBlue: hsl(234, 12%, 34%);
+	--grayishBlue: hsl(229, 6%, 66%);
+	--veryLightGray: hsl(0, 0%, 98%);
+
+	/*** Typographie ***/
+	--primaryFont: 'Poppins', sans-serif;
+	--defaultFontSize: 0.8125rem;
+	--lightFontWeight: 200;
+	--regularFontWeight: 400;
+	--semiBoldFontWeight: 600;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Reset Style                                */
+/* -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+p {
+	margin-bottom: 1em;
+}
+
+img {
+	display: block;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                General Style                               */
+/* -------------------------------------------------------------------------- */
+
+body {
+	display: flex;
+	flex-direction: column;
+	place-content: center;
+	font-family: var(--primaryFont);
+	font-size: var(--defaultFontSize);
+	line-height: 1;
+	color: var(--grayishBlue);
+	background-color: var(--veryLightGray);
+	width: min(100%, 90rem);
+	min-height: 100vh;
+	margin-inline: auto;
+	padding: 5.625rem 2rem;
+}
+
+h1,
+h2 {
+	color: var(--veryDarkBlue);
+	font-weight: var(--semiBoldFontWeight);
+}
+
+/****************
+ * HEADER STYLE *
+ ****************/
 .header {
-	background-color: aqua;
+	line-height: 1.6;
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.header-title {
+	font-size: 1.0625rem;
+	font-size: 25px;
+	line-height: 1.6;
+	text-align: center;
+}
+
+.header-title span {
+	color: var(--grayishBlue);
+	font-weight: var(--lightFontWeight);
+}
+.header-info {
+	font-size: 0.9375rem;
+	max-width: 31.25rem;
+	margin-inline: auto;
+}
+
+/**************
+ * MAIN STYLE *
+ **************/
+.grid-main {
+	max-width: 1115px;
+	margin-inline: auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 21.875rem), 1fr));
+	gap: 2rem;
+}
+
+/********
+ * CARD *
+ ********/
+
+.card {
+	padding: 1.875rem 20px;
+	border-radius: 0.5rem;
+	background-color: hsl(0, 0%, 100%);
+	box-shadow: 1px 3px 15px var(--grayishBlue);
+	position: relative;
+	overflow: hidden;
+}
+
+.card::before {
+	content: '';
+	inset-inline: 0;
+	height: 0.3125rem;
+	position: absolute;
+	top: 0;
+}
+
+.card:nth-of-type(1)::before {
+	background-color: var(--Cyan);
+}
+.card:nth-of-type(2)::before {
+	background-color: var(--Red);
+}
+.card:nth-of-type(3)::before {
+	background-color: var(--Orange);
+}
+.card:nth-of-type(4)::before {
+	background-color: var(--Blue);
+}
+
+.card-title {
+	font-size: 0.9375rem;
+}
+
+.card-icon {
+	margin-top: 2.5rem;
+	margin-left: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Media Queries                               */
+/* -------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 70em) {
+	/****************
+ * HEADER STYLE *
+ ****************/
+	.header-title {
+		font-size: 2rem;
+	}
+
+	/**************
+ * MAIN STYLE *
+ **************/
+
+	.grid-main {
+		grid-template-rows: repeat(2, 1fr);
+	}
+
+	/********
+ * CARD *
+ ********/
+	.card:nth-of-type(1) {
+		grid-row: 1 / span 2;
+		align-self: center;
+	}
+
+	.card:nth-of-type(4) {
+		grid-column: 3 / 4;
+		grid-row: 1 / span 2;
+		align-self: center;
+	}
+	.card-info {
+		max-width: 35ch;
+	}
 }
