@@ -18,7 +18,7 @@
 
 	/*** Typographie ***/
 	--primaryFont: 'Poppins', sans-serif;
-	--defaultFontSize: 0.8125rem;
+	--defaultFontSize: 0.9375rem;
 	--lightFontWeight: 200;
 	--regularFontWeight: 400;
 	--semiBoldFontWeight: 600;
@@ -56,7 +56,7 @@ body {
 	place-content: center;
 	font-family: var(--primaryFont);
 	font-size: var(--defaultFontSize);
-	line-height: 1;
+	line-height: 1.6;
 	color: var(--grayishBlue);
 	background-color: var(--veryLightGray);
 	width: min(100%, 90rem);
@@ -88,11 +88,10 @@ h2 {
 }
 
 .header-title span {
-	color: var(--grayishBlue);
 	font-weight: var(--lightFontWeight);
 }
 .header-info {
-	font-size: 0.9375rem;
+	font-size: 1.125rem;
 	max-width: 31.25rem;
 	margin-inline: auto;
 }
@@ -143,7 +142,7 @@ h2 {
 }
 
 .card-title {
-	font-size: 0.9375rem;
+	font-size: 1.125rem;
 }
 
 .card-icon {
